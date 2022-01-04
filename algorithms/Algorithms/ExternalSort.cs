@@ -22,15 +22,23 @@ public static class ExternalSort
                 {
                     using (var reader3 = new StreamWriter(path3,false))
                     {
-                        for (int i = 0; i < lenght; i+=size)
+                        for (int i = 0; i < lenght; i+=0)
                         {
                             for (int j = 0; j < size; j++)
                             {
-                                reader2.WriteLine(reader.ReadLine());
+                                var a = reader.ReadLine();
+                                reader2.WriteLine(a);
+                                i++;
                             }
-                            for (int j = 0; j < size; j++)
+
+                            if (i < lenght)
                             {
-                                reader3.WriteLine(reader.ReadLine());
+                                for (int j = 0; j < size; j++)
+                                {
+                                    var b = reader.ReadLine();
+                                    reader3.WriteLine(b);
+                                    i++;
+                                }
                             }
                         }
                     }
@@ -42,26 +50,29 @@ public static class ExternalSort
                 {
                     using (var reader3 = new StreamReader(path3))
                     {
-                        for (int i = 0; i < lenght; i++)
+                        var listB = new List<int>();
+                        var listC = new List<int>();
+                        for (int i = 0; i < lenght; i+=0)
                         {
-                            var listB = new List<int>();
-                            var listC = new List<int>();
                             for (int j = 0; j < size; j++)
                             {
-                                if(int.TryParse(reader2.ReadLine(),out var value))
+                                var line = reader2.ReadLine();
+                                if(int.TryParse(line,out var value))
                                     listB.Add(value);
+                                i++;
                             }
                             for (int j = 0; j < size; j++)
                             {
-                                if(int.TryParse(reader3.ReadLine(),out var value))
+                                var line = reader3.ReadLine();
+                                if(int.TryParse(line,out var value))
                                     listC.Add(value);
+                                i++;
                             }
-
-                            var res = Merge(listB, listC);
-                            foreach (var item in res)
-                            {
-                                reader.WriteLine(item.ToString());
-                            }
+                        }
+                        var res = Merge(listB, listC);
+                        foreach (var item in res)
+                        {
+                            reader.WriteLine(item.ToString());
                         }
                     }
                 }

@@ -33,6 +33,6 @@ public class ExternalSortTests
                 list2.Add(value);
             }
         }
-        Assert.Equal(list.OrderBy(x=>x),list2.OrderBy(x=>x));
+        Assert.Equal(list.OrderBy(x=>x),list2);
     }
 }
