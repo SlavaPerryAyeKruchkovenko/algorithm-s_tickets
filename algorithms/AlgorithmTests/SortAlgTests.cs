@@ -48,7 +48,6 @@ public class SortAlgTests
         var res = arr.OrderBy(x=>x).ToArray();
         Assert.Equal(arr,res);
     }
-    
     public static IEnumerable<object[]> GetArrays()
     {
         yield return new object[] { new[]{9, 7, 6, 2, 1} };
