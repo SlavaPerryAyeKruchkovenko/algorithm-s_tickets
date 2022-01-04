@@ -1,6 +1,12 @@
 # algorithm-s_tickets
 the tickets from exam of algorithm
 
-change branch to see algorithm and block diagram in your ticket 
+Redix Sort
 
-![img.png](img.png)
+Block diagram
+
+![img_1.png](img_1.png)
+
+good video
+
+https://www.youtube.com/watch?v=toAlAJKojos
