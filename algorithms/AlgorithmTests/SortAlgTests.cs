@@ -1,6 +1,6 @@
-using System;
+
 using System.Collections.Generic;
-using System.Collections.Immutable;
+
 using Xunit;
 using Algorithms;
 using System.Linq;
@@ -19,9 +19,9 @@ public class SortAlgTests
     }
     public static IEnumerable<object[]> GetArrs()
     {
-        yield return new object[] { new int[]{9, 7, 6, 2, 1} };
-        yield return new object[] { new int[]{1,2,3,4,9} };
-        yield return new object[] { new int[]{80,290,0,12,-10} };
-        yield return new object[] { new int[]{-10,-90,-88,-92,-102,-180} };
+        yield return new object[] { new []{9, 7, 6, 2, 1} };
+        yield return new object[] { new []{1,2,3,4,9} };
+        yield return new object[] { new []{80,290,0,12,-10} };
+        yield return new object[] { new []{-10,-90,-88,-92,-102,-180} };
     }
 }
