@@ -17,6 +17,14 @@ public class BinaryTreeTests
         var res = Array.IndexOf(arr,key);
         Assert.Equal(index,res);
     }
+    [Theory]
+    [MemberData(nameof(GetArrays))]
+    public void BinarySortTest(int[] arr,int key)
+    {
+        var res  = BinaryTree.BinarySort(arr);
+        arr = arr.OrderBy(x => x).ToArray();
+        Assert.Equal(arr,res);
+    }
     public static IEnumerable<object[]> GetArrays()
     {
         yield return new object[] { new[]{9, 7, 6, 2, 1},9 };
