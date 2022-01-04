@@ -2,7 +2,7 @@
 
 public static class SortAlgorithms
 {
-    public static int[] BublleSort(int[] arr)
+    public static int[] BubbleSort(int[] arr)
     {
         for (int i = 0; i < arr.Length; i++)
         {
