@@ -33,6 +33,14 @@ public class SortAlgTests
         var res = arr.OrderBy(x=>x).ToArray();
         Assert.Equal(arr,res);
     }
+    [Theory]
+    [MemberData(nameof(GetArrs))]
+    public void ShakerTest(int[] arr)
+    {
+        arr = SortAlgorithms.ShakerSort(arr);
+        var res = arr.OrderBy(x=>x).ToArray();
+        Assert.Equal(arr,res);
+    }
     public static IEnumerable<object[]> GetArrs()
     {
         yield return new object[] { new int[]{9, 7, 6, 2, 1} };
