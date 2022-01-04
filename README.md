@@ -1,6 +1,8 @@
 # algorithm-s_tickets
 the tickets from exam of algorithm
 
-change branch to see algorithm and block diagram in your ticket 
+Merge Sort
 
-![img.png](img.png)
+block diagram
+
+![img_1.png](img_1.png)
