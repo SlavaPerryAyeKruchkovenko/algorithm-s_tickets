@@ -11,30 +11,6 @@ public class SortAlgTests
 {
     [Theory]
     [MemberData(nameof(GetArrs))]
-    public void BubuleTest(int[] arr)
-    {
-        arr = SortAlgorithms.BublleSort(arr);
-        var res = arr.OrderBy(x=>x).ToArray();
-        Assert.Equal(arr,res);
-    }
-    [Theory]
-    [MemberData(nameof(GetArrs))]
-    public void InstertTest(int[] arr)
-    {
-        arr = SortAlgorithms.InsertSort(arr);
-        var res = arr.OrderBy(x=>x).ToArray();
-        Assert.Equal(arr,res);
-    }
-    [Theory]
-    [MemberData(nameof(GetArrs))]
-    public void SelectionTest(int[] arr)
-    {
-        arr = SortAlgorithms.SelectionSort(arr);
-        var res = arr.OrderBy(x=>x).ToArray();
-        Assert.Equal(arr,res);
-    }
-    [Theory]
-    [MemberData(nameof(GetArrs))]
     public void ShakerTest(int[] arr)
     {
         arr = SortAlgorithms.ShakerSort(arr);
