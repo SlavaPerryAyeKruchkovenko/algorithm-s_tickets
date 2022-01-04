@@ -1,6 +1,12 @@
 # algorithm-s_tickets
 the tickets from exam of algorithm
 
-change branch to see algorithm and block diagram in your ticket 
+QuickSort
 
-![img.png](img.png)
+Block diagram
+
+![img_1.png](img_1.png)
+
+Good Video
+
+https://youtu.be/DmFXdwy_mH0
