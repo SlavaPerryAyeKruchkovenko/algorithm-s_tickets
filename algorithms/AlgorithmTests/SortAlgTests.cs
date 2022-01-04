@@ -9,14 +9,7 @@ namespace AlgorithmTests;
 
 public class SortAlgTests
 {
-    [Theory]
-    [MemberData(nameof(GetArrs))]
-    public void BubuleTest(int[] arr)
-    {
-        arr = SortAlgorithms.BublleSort(arr);
-        var res = arr.OrderBy(x=>x).ToArray();
-        Assert.Equal(arr,res);
-    }
+    
     [Theory]
     [MemberData(nameof(GetArrs))]
     public void InstertTest(int[] arr)
