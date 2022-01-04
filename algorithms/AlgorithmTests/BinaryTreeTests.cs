@@ -10,15 +10,6 @@ public class BinaryTreeTests
 {
     [Theory]
     [MemberData(nameof(GetArrays))]
-    public void ShellTest(int[] arr,int key)
-    {
-        arr = arr.OrderBy(x => x).ToArray();
-        var index  = BinaryTree.BinarySearch(key,arr,0,arr.Length);
-        var res = Array.IndexOf(arr,key);
-        Assert.Equal(index,res);
-    }
-    [Theory]
-    [MemberData(nameof(GetArrays))]
     public void BinarySortTest(int[] arr,int key)
     {
         var res  = BinaryTree.BinarySort(arr);
