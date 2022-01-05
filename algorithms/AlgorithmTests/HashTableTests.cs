@@ -10,15 +10,6 @@ using System.Collections.Generic;
 public class HashTableTests
 {
     [Fact]
-    public void HashTableTest()
-    {
-        var table = new HashTable<int, string>(1000);
-        //table = RandomTable(table);
-        Assert.True(table.PercentageOfFilling()>=99.0);
-        Assert.True(table.CountOfFewerList() >= 95);
-        Assert.True(table.CountOfLongestList() <= 105);
-    }
-    [Fact]
     public void GoodHashTableTest()
     {
         uint size = 100;

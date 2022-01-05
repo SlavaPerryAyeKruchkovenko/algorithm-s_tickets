@@ -1,6 +1,10 @@
 # algorithm-s_tickets
 the tickets from exam of algorithm
 
-change branch to see algorithm and block diagram in your ticket 
+Hash table with open addressing method
 
-![img.png](img.png)
+![img_1.png](img_1.png)
+
+good video
+
+https://www.youtube.com/watch?v=jg0L0B5pC-w&t=313s
