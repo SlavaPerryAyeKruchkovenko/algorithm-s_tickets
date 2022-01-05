@@ -20,7 +20,7 @@ public class HashTable<TKey, TValue> : IHashTable<TKey,TValue>, IEnumerable<Tupl
 			{
 				if (item is not null && item.Count > maxCount)
 				{
-					maxCount = item.Count();
+					maxCount = item.Count;
 				}
 			}
 			return maxCount;
@@ -100,8 +100,6 @@ public class HashTable<TKey, TValue> : IHashTable<TKey,TValue>, IEnumerable<Tupl
 		}
 		private int GetHashCode(TKey key)
 		{
-			//var b = key.ToString()[0];
-			//var a = key.ToString().Length;
 			double value = key is int key2 ? 0.618033988  * key2 :  0.6180339887 * key.ToString()[0];
 			var trunc = Math.Truncate(value);
 			var hash = (int)(Size * (value - trunc));
