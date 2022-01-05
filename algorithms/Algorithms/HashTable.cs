@@ -3,6 +3,7 @@ using System.Collections;
 namespace Algorithms;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
 
 public class HashTable<TKey, TValue> : IHashTable<TKey,TValue>, IEnumerable<Tuple<TKey, TValue>>
 	{
