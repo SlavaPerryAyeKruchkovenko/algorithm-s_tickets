@@ -91,44 +91,6 @@ public class MyLinkedList<TValue>:IEnumerable<TValue>
         return GetEnumerator();
     }
 }
-public class MyStack<TValue>:IEnumerable<TValue>
-{
-    
-    private MyLinkedList<TValue> list = new MyLinkedList<TValue>();
-    public int Count { get; private set; } = 0;
-    public void Push(TValue value)
-    {
-        Count++;
-        list.AddLast(value);
-    }
-
-    public TValue Pop()
-    {
-        Count = Count ==0?0:Count-1;
-        return list.RemoveLast();
-    }
-
-    public TValue Top()
-    {
-        return list.Tail.Value;
-    }
-
-    public bool IsEmpty()
-    {
-        return list.IsEmpty();
-    }
-
-    public IEnumerator<TValue> GetEnumerator()
-    {
-        return list.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-}
-
 public class MyQueue<TValue>:IEnumerable<TValue>
 {
     

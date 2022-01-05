@@ -8,23 +8,6 @@ public class DataTypesTests
 {
     [Theory]
     [MemberData(nameof(GetArrays))]
-    public void StackTest(int[] arr)
-    {
-        var stack = new MyStack<int>();
-        foreach (var item in arr)
-        {
-            stack.Push(item);
-        }
-        var list = new List<int>();
-        var count = stack.Count();
-        for (int i = 0; i < count; i++)
-        {
-            list.Add(stack.Pop());
-        }
-        Assert.Equal(arr.Reverse().ToArray(), list.ToArray());
-    }
-    [Theory]
-    [MemberData(nameof(GetArrays))]
     public void QueueTest(int[] arr)
     {
         var queue = new MyQueue<int>();
