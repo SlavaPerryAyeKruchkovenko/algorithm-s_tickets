@@ -23,23 +23,7 @@ public class DataTypesTests
         }
         Assert.Equal(arr.Reverse().ToArray(), list.ToArray());
     }
-    [Theory]
-    [MemberData(nameof(GetArrays))]
-    public void QueueTest(int[] arr)
-    {
-        var queue = new MyQueue<int>();
-        foreach (var item in arr)
-        {
-            queue.Enqueue(item);
-        }
-        var list = new List<int>();
-        var count = queue.Count();
-        for (int i = 0; i < count; i++)
-        {
-            list.Add(queue.Dequeue());
-        }
-        Assert.Equal(arr, list.ToArray());
-    }
+    
     public static IEnumerable<object[]> GetArrays()
     {
         yield return new object[] { new[]{9, 7, 6, 2, 1} };
