@@ -1,6 +1,12 @@
 # algorithm-s_tickets
 the tickets from exam of algorithm
 
-change branch to see algorithm and block diagram in your ticket 
+ABS Sort
 
-![img.png](img.png)
+About it 
+
+https://habr.com/ru/post/201534/
+
+good video
+
+https://www.youtube.com/watch?v=V5mZeZvBfso
