@@ -36,4 +36,37 @@ public static class GraphAlgs
         }
         return list;
     }
+    public static IEnumerable<MyNode<string>> DepthSearch(Graph<string> graph)
+    {
+        // Внимание! Перед использованием этого кода, прочитайте следующий слайд «Использование памяти»
+        var visited = new HashSet<MyNode<string>>();
+        var stack = new Stack<MyNode<string>>();
+        stack.Push(graph[0]);
+        while (stack.Count != 0)
+        {
+            var node = stack.Pop();
+            if (visited.Contains(node)) continue;
+            visited.Add(node);
+            yield return node;
+            foreach (var incidentNode in node.)
+                stack.Push(incidentNode);
+        }
+    }
+
+    public static IEnumerable<MyNode<string>> BreadthSearch(Graph<string> graph)
+    {
+        // Внимание! Перед использованием этого кода, прочитайте следующий слайд «Использование памяти»
+        var visited = new HashSet<MyNode<string>>();
+        var queue = new Queue<MyNode<string>>();
+        queue.Enqueue(graph[0]);
+        while (queue.Count != 0)
+        {
+            var node = queue.Dequeue();
+            if (visited.Contains(node)) continue;
+            visited.Add(node);
+            yield return node;
+            foreach (var incidentNode in node.IncedentNode)
+                queue.Enqueue(incidentNode);
+        }
+    }
 }
