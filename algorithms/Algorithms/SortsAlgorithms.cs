@@ -5,6 +5,7 @@ namespace Algorithms;
 
 public static class SortAlgorithms
 {
+    //самый маленький элемент в начале
     public static int[] BubbleSort(int[] arr)
     {
         for (var i = 0; i < arr.Length; i++)
@@ -16,11 +17,16 @@ public static class SortAlgorithms
                     (arr[j], arr[i]) = (arr[i], arr[j]);
                 }
             }
+            foreach (var val in arr)
+            {
+                Console.Write(val+" ");
+            }
+            Console.WriteLine();
         }
 
         return arr;
     }
-
+    //двигаю в лево arr[i] максильмано возможно
     public static int[] InsertSort(int[] arr)
     {
         for (var i = 1; i < arr.Length; i++)
@@ -36,7 +42,7 @@ public static class SortAlgorithms
         }
         return arr;
     }
-
+    // ищу наименьшей элемент относительно arr[i] и меняю их местами
     public static int[] SelectionSort(int[] arr)
     {
         for (var i = 0; i < arr.Length-1; i++)
@@ -50,6 +56,11 @@ public static class SortAlgorithms
                 }
             }
             (arr[index], arr[i]) = (arr[i], arr[index]);
+            foreach (var val in arr)
+            {
+                Console.Write(val+" ");
+            }
+            Console.WriteLine();
         } 
         return arr;
     }
@@ -67,6 +78,11 @@ public static class SortAlgorithms
                     needSort = true;
                 }
             }
+            foreach (var val in arr)
+            {
+                Console.Write(val+" ");
+            }
+            Console.WriteLine();
             for (var j = arr.Length-2-i; j > i; j--)
             {
                 if (arr[j] < arr[j - 1])
@@ -75,6 +91,11 @@ public static class SortAlgorithms
                     needSort = true;
                 }
             }
+            foreach (var val in arr)
+            {
+                Console.Write(val+" ");
+            }
+            Console.WriteLine();
             if (!needSort)
             {
                 return arr;
