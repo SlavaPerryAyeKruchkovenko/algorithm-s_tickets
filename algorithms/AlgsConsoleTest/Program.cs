@@ -21,8 +21,8 @@ graph.Connect(2,4,"7",6);
 graph.Connect(3,5,"8",2);
 graph.Connect(2,5,"9",4);
 
-var list =  GraphAlgs.PrimAlgorithm(graph);
-foreach (var edge in list)
+var list =  GraphAlgs.Dijkstra(graph,graph[0],graph[5]);
+foreach (var node in list)
 {
-    Console.WriteLine($"{edge.To.Name} {edge.From.Name}");
+    Console.WriteLine($"{node.Name}");
 }
