@@ -103,23 +103,35 @@ public static class SortAlgorithms
         }
         return arr;
     }
-
-    public static int[] ShellSort(int[] array)
+// пока шаг больше или равен 1 мы меняем элементы местами начиная с индекса шага тащим его назад пока можим как
+// только все элемнеты прото скали делим шаг на 2
+    public static int[] ShellSort(int[] arr)
     {
-        for (var step = (array.Length - 1) / 2; step > 0; step /= 2)
+        var steep = arr.Length / 2;
+        while (steep >= 1)
         {
-            for (var i = 0; i < step; i++)
+            steep = steep / 2;
+            for (var i = steep; i < arr.Length; i++)
             {
-                for (var j = i; j + step < array.Length; j += step)
+                var j = i;
+                while (j >= steep && arr[j - steep] > arr[j])
                 {
-                    if (array[j] > array[j + step]) (array[j], array[j + step]) = (array[j + step], array[j]);
+                    (arr[j], arr[j-steep]) = (arr[j-steep], arr[j]);
+                    j = j - steep;
                 }
+                foreach (var val in arr)
+                {
+                    Console.Write(val+" ");
+                }
+                Console.WriteLine();
             }
         }
-
-        return array;
+        return arr;
     }
-
+    // если элемент меньше последнего то меняем его местами с элементам от индекса market при этом увеличиваем маркет
+    // вконце меняем местами элемент под индексом маркет и последний
+    // затем вызываем рекурсию от market+1 до last
+    // затем вызываем рекурсию от first до market-1
     public static int[] QuickSort(int[] arr,int first,int last)
     {
         static int Sort(int[] arr,int first,int last)
@@ -135,6 +147,11 @@ public static class SortAlgorithms
                 }
             }
             (arr[market], arr[last]) = (arr[last], arr[market]);
+            foreach (var val in arr)
+            {
+                Console.Write(val+" ");
+            }
+            Console.WriteLine();
             return market;
         }
         if ( first >= last)
@@ -183,7 +200,7 @@ public static class SortAlgorithms
         {
             for (var i = 0; i < arr.Length; i++)
             {
-                var key = (arr[i] / mul) % 10;
+                var key = arr[i] / mul % 10;
                 table[key].Add(arr[i]);
             }
 

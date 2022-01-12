@@ -3,5 +3,5 @@
 using Algorithms;
 
 
-var arr = new int[]{5,4,3,2,1};
-SortAlgorithms.ShakerSort(arr);
+var arr = new int[]{3,4,5,0,1};
+SortAlgorithms.QuickSort(arr,0,arr.Length-1);
