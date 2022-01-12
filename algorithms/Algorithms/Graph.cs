@@ -4,12 +4,7 @@ public class Graph<TKey>
 {
     private List<MyNode<TKey>> nodes = new List<MyNode<TKey>>();
 
-    public Graph()
-    {
-        
-    }
-
-    public int Length { get { return nodes.Count; } }
+    public int Length => nodes.Count; 
 
     public MyNode<TKey> this[int index] { get { return nodes[index]; } }
 
