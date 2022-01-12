@@ -83,23 +83,20 @@ public static class SortAlgorithms
         return arr;
     }
 
-    public static int[] ShellSort(int[] arr)
+    public static int[] ShellSort(int[] array)
     {
-        var steep = arr.Length / 2;
-        while (steep >= 1)
+        for (int step = (array.Length - 1) / 2; step > 0; step /= 2)
         {
-            steep = steep / 2;
-            for (var i = steep; i < arr.Length; i++)
+            for (int i = 0; i < step; i++)
             {
-                var j = i;
-                while ((j >= steep) && (arr[j - steep] > arr[j]))
+                for (int j = i; j + step < array.Length; j += step)
                 {
-                    (arr[j], arr[j-steep]) = (arr[j-steep], arr[j]);
-                    j = j - steep;
+                    if (array[j] > array[j + step]) (array[j], array[j + step]) = (array[j + step], array[j]);
                 }
             }
         }
-        return arr;
+
+        return array;
     }
 
     public static int[] QuickSort(int[] arr,int first,int last)
@@ -148,10 +145,10 @@ public static class SortAlgorithms
         var maxlenght = 1;
         foreach (var item in arr)
         {
-            var word = item.ToString();
-            if (word.Length > maxlenght)
+            var lenght = (int)Math.Log10(item) + 1;
+            if (lenght > maxlenght)
             {
-                maxlenght = word.Length;
+                maxlenght = lenght;
             }
         }
         var table = new Dictionary<int, List<int>>();
