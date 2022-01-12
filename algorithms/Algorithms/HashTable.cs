@@ -101,7 +101,7 @@ public class HashTable<TKey, TValue> : IHashTable<TKey,TValue>, IEnumerable<Tupl
 		}
 		private int GetHashCode(TKey key)
 		{
-			double value = key is int key2 ? 0.618033988  * key2 :  0.6180339887 * key.ToString()[0];
+			var value = key is int key2 ? 0.618033988  * key2 :  0.6180339887 * key.ToString()[0];
 			var trunc = Math.Truncate(value);
 			var hash = (int)(Size * (value - trunc));
 			return hash;
@@ -146,7 +146,7 @@ public class GoodHashTable<TKey, TValue> : IHashTable<TKey, TValue>, IEnumerable
 	{
 		if (key != null)
 		{
-			double value = key is int key2 ? 0.618033988  * key2 :  0.6180339887 * key.ToString()[0];
+			var value = key is int key2 ? 0.618033988  * key2 :  0.6180339887 * key.ToString()[0];
 			var trunc = Math.Truncate(value);
 			var hash = (int)(Size * (value - trunc));
 			return hash;
@@ -180,9 +180,9 @@ public class GoodHashTable<TKey, TValue> : IHashTable<TKey, TValue>, IEnumerable
 	{
 		var hash = GetHashCode(key);
 		var hash2 = GetHelperHashCode(key);
-		for (int index = 0; index < Size; index++)
+		for (var index = 0; index < Size; index++)
 		{
-			int newHash = (int)((hash + index * hash2)%Size);
+			var newHash = (int)((hash + index * hash2)%Size);
 			if (_map[newHash] == null)
 			{
 				_map[newHash] = new Tuple<TKey, TValue>(key, value);

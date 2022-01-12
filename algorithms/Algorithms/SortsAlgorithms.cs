@@ -7,9 +7,9 @@ public static class SortAlgorithms
 {
     public static int[] BubbleSort(int[] arr)
     {
-        for (int i = 0; i < arr.Length; i++)
+        for (var i = 0; i < arr.Length; i++)
         {
-            for (int j = i+1; j < arr.Length; j++)
+            for (var j = i+1; j < arr.Length; j++)
             {
                 if (arr[i] > arr[j])
                 {
@@ -23,7 +23,7 @@ public static class SortAlgorithms
 
     public static int[] InsertSort(int[] arr)
     {
-        for (int i = 1; i < arr.Length; i++)
+        for (var i = 1; i < arr.Length; i++)
         {
             var k = i - 1;
             var el = arr[i];
@@ -39,10 +39,10 @@ public static class SortAlgorithms
 
     public static int[] SelectionSort(int[] arr)
     {
-        for (int i = 0; i < arr.Length-1; i++)
+        for (var i = 0; i < arr.Length-1; i++)
         {
             var index = i;
-            for (int j = i+1; j < arr.Length; j++)
+            for (var j = i+1; j < arr.Length; j++)
             {
                 if (arr[j] < arr[index])
                 {
@@ -56,10 +56,10 @@ public static class SortAlgorithms
 
     public static int[] ShakerSort(int[] arr)
     {
-        for (int i = 0; i < arr.Length; i++)
+        for (var i = 0; i < arr.Length; i++)
         {
             var needSort = false;
-            for (int j = i; j < arr.Length-1-i; j++)
+            for (var j = i; j < arr.Length-1-i; j++)
             {
                 if (arr[j + 1] < arr[j])
                 {
@@ -67,7 +67,7 @@ public static class SortAlgorithms
                     needSort = true;
                 }
             }
-            for (int j = arr.Length-2-i; j > i; j--)
+            for (var j = arr.Length-2-i; j > i; j--)
             {
                 if (arr[j] < arr[j - 1])
                 {
@@ -85,11 +85,11 @@ public static class SortAlgorithms
 
     public static int[] ShellSort(int[] array)
     {
-        for (int step = (array.Length - 1) / 2; step > 0; step /= 2)
+        for (var step = (array.Length - 1) / 2; step > 0; step /= 2)
         {
-            for (int i = 0; i < step; i++)
+            for (var i = 0; i < step; i++)
             {
-                for (int j = i; j + step < array.Length; j += step)
+                for (var j = i; j + step < array.Length; j += step)
                 {
                     if (array[j] > array[j + step]) (array[j], array[j + step]) = (array[j + step], array[j]);
                 }
@@ -105,7 +105,7 @@ public static class SortAlgorithms
         {
             var market = first;
             var pivot = arr[last];//pivot выбирается различными способами в данной реализации я вязл его как последний элемент
-            for (int i = first; i < last; i++)
+            for (var i = first; i < last; i++)
             {
                 if (arr[i] < pivot)
                 {
@@ -119,7 +119,7 @@ public static class SortAlgorithms
         if ( first >= last)
             return arr;
         
-        int pivot = Sort(arr, first, last);
+        var pivot = Sort(arr, first, last);
         QuickSort (arr, first, pivot-1);
         QuickSort (arr, pivot+1, last);
         return arr;
@@ -130,7 +130,7 @@ public static class SortAlgorithms
         static int [] GetArr(Dictionary<int,List<int>> table)
         {
             var list = new List<int>();
-            for (int i = -9; i <= 9; i++)
+            for (var i = -9; i <= 9; i++)
             {
                 foreach (var item in table[i])
                 {
@@ -152,15 +152,15 @@ public static class SortAlgorithms
             }
         }
         var table = new Dictionary<int, List<int>>();
-        for (int i = -9; i <=9; i++)
+        for (var i = -9; i <=9; i++)
         {
             table.Add(i,new List<int>());
         }
 
         var mul = 1;
-        for (int k = 0; k < maxlenght; k++)
+        for (var k = 0; k < maxlenght; k++)
         {
-            for (int i = 0; i < arr.Length; i++)
+            for (var i = 0; i < arr.Length; i++)
             {
                 var key = (arr[i] / mul) % 10;
                 table[key].Add(arr[i]);

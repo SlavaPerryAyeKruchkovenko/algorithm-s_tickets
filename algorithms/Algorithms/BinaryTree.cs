@@ -67,7 +67,7 @@ public static class BinaryTree
     public static int[] BinarySort(int[] arr)
     {
         var treeNode = new TreeNode(arr[0]);
-        for (int i = 1; i < arr.Length; i++)
+        for (var i = 1; i < arr.Length; i++)
         {
             treeNode.Insert(new TreeNode(arr[i]));
         }

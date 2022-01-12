@@ -22,9 +22,9 @@ public static class ExternalSort
                 {
                     using (var reader3 = new StreamWriter(path3,false))
                     {
-                        for (int i = 0; i < lenght; i+=0)
+                        for (var i = 0; i < lenght; i+=0)
                         {
-                            for (int j = 0; j < size; j++)
+                            for (var j = 0; j < size; j++)
                             {
                                 var a = reader.ReadLine();
                                 reader2.WriteLine(a);
@@ -33,7 +33,7 @@ public static class ExternalSort
 
                             if (i < lenght)
                             {
-                                for (int j = 0; j < size; j++)
+                                for (var j = 0; j < size; j++)
                                 {
                                     var b = reader.ReadLine();
                                     reader3.WriteLine(b);
@@ -52,16 +52,16 @@ public static class ExternalSort
                     {
                         var listB = new List<int>();
                         var listC = new List<int>();
-                        for (int i = 0; i < lenght; i+=0)
+                        for (var i = 0; i < lenght; i+=0)
                         {
-                            for (int j = 0; j < size; j++)
+                            for (var j = 0; j < size; j++)
                             {
                                 var line = reader2.ReadLine();
                                 if(int.TryParse(line,out var value))
                                     listB.Add(value);
                                 i++;
                             }
-                            for (int j = 0; j < size; j++)
+                            for (var j = 0; j < size; j++)
                             {
                                 var line = reader3.ReadLine();
                                 if(int.TryParse(line,out var value))
