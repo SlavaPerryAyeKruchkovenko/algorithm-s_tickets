@@ -7,4 +7,4 @@ Hash table with open addressing method
 
 good video
 
-https://www.youtube.com/watch?v=jg0L0B5pC-w&t=313s
+https://www.youtube.com/watch?v=zyyb6cEh0VQ
